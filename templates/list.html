@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+</head>
+<body>
+    <form method="POST" action= "{{url('list')}}" enctype="multipart/form-data">
+        <label>Add item to the list</label><br>
+        <input type="text" name="item"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    {%block list %}
+
+    {% for i in list%}
+
+    <p>{{i}}</p>
+
+    {%endfor%}
+    {%endblock%}
+
+    {%block response%}
+
+    <p>response : {{response}} </p>
+
+    {%endblock%}
+
+</body>
+</html>
